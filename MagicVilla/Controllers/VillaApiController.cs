@@ -3,12 +3,14 @@ using AutoMapper;
 using MagicVilla.Models;
 using MagicVilla.Models.DTOs;
 using MagicVilla.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MagicVilla.Controllers;
 
 [Route("/api/villas")]
+[Authorize]
 public class VillaApiController: BaseApiController
 {
     private readonly IMapper _mapper;
